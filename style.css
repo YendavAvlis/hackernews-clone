@@ -37,7 +37,7 @@ header .flex a {
 }
 
 .orange {
-  background-color: #ff6600;
+  background-color: #fa9049;
 }
 
 .background-gray {
@@ -130,13 +130,14 @@ input {
 }
 
 .header {
-  background-color: #ff6600;
+  background-color: #fa9049;
   white-space: nowrap;
   padding: 0.5rem;
   color: black;
   justify-content: space-between;
   align-items: center;
   display: flex;
+  border-radius: .25em;
 }
 
 .header-title {

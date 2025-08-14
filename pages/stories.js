@@ -31,9 +31,9 @@ async function getStories(path) {
     const isHomeRoute = path === "/";
     const isNewRoute = path === "/new";
     if(isHomeRoute){
-        path = '/news';
+        path = "/news";
     }else if (isNewRoute) {
-        path = '/newest'
+        path = "/newest"
     }
     const response = await fetch(`${baseUrl}${path}`);
     const stories = await response.json();

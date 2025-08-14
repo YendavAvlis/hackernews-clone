@@ -13,7 +13,7 @@ export default function Story(story){
                 ${story.comments_count} comments
             </a> |
             <span class="favorite" data-story="${JSON.stringify(story)}">
-                <img class="heart" src="https://icon.now.sh/heart/ccc"> ${story.isFavorite ? "Remove From Favorites" : "Add Favorites"}
+                 <ion-icon name="heart-outline"></ion-icon> ${story.isFavorite ? "Remove From Favorites" : "Add Favorites"}
             </span>
         </div>
     </div>`
