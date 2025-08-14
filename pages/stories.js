@@ -11,25 +11,25 @@ export default async function Stories(path) {
     const hasStories = stories.length > 0;
 
     view.innerHTML = `<div>
-    ${hasStories ? stories.map((story, i) => Story({...story, index: i + 1, isFavorite: checkFavorite(favorites, story)})).join('') : 'No Stories'}
+    ${hasStories ? stories.map((story, i) => Story({...story, index: i + 1, isFavorite: checkFavorite(favorites, story)})).join("") : "No Stories"}
     </div>`
 
-    document.querySelectorAll('.favorite').forEach(favoriteButton => {
-        favoriteButton.addEventListener('click', async function(){
+    document.querySelectorAll(".favorite").forEach(favoriteButton => {
+        favoriteButton.addEventListener("click", async function(){
             const story = JSON.parse(this.dataset.story)
             console.log(story)
             const isFavorited = checkFavorite(favorites, story);
             console.log(isFavorited)
 
-            store.dispatch({ type: isFavorited ? "REMOVE_FAVORITE" : "ADD_FAVORITE", payload: { favorite: story } })  
+            store.dispatch({ type: isFavorited ? "REMOVE_FAVORITE" : "ADD_FAVORITE", payload: { favorite: story } })
             await Stories(path);
         });
     });
 }
 
 async function getStories(path) {
-    const isHomeRoute = path === '/';
-    const isNewRoute = path === '/new';
+    const isHomeRoute = path === "/";
+    const isNewRoute = path === "/new";
     if(isHomeRoute){
         path = '/news';
     }else if (isNewRoute) {
